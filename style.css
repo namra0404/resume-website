@@ -1,0 +1,83 @@
+/* ---------- Palette & base ---------- */
+:root {
+  --navy: #1e2a44;
+  --accent: #ff6b6b;
+  --light: #f5f7fb;
+  --text: #333;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;   /* element selector */
+  color: var(--text);
+  background: var(--light);
+  line-height: 1.7;
+}
+h1, h2, h3 { font-family: 'Poppins', sans-serif; color: var(--navy); }
+a { color: var(--accent); text-decoration: none; }
+
+/* ---------- Navigation bar (flexbox + sticky) ---------- */
+.navbar {                              /* class selector */
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 8%;
+  background: var(--navy);
+}
+.logo { color: #fff; font: 700 1.3rem 'Poppins', sans-serif; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a { color: #fff; font-weight: 500; transition: color .3s; }
+.nav-links a:hover { color: var(--accent); }
+
+/* ---------- Hero ---------- */
+#hero {                                /* ID selector */
+  text-align: center; color: #fff;
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, var(--navy), #3d5a99);
+}
+#hero h1 { color: #fff; font-size: 2.8rem; }
+.highlight { color: var(--accent); }
+.tagline { margin: 1rem 0 2rem; font-size: 1.15rem; }
+.btn {
+  display: inline-block; padding: .8rem 2rem;
+  background: var(--accent); color: #fff; border-radius: 30px; font-weight: 600;
+  transition: transform .3s;
+}
+.btn:hover { transform: translateY(-3px); }
+
+/* ---------- Sections ---------- */
+main { max-width: 1000px; margin: auto; padding: 0 1.5rem; }
+section { padding: 3.5rem 0; }
+section h2 {
+  margin-bottom: 1.5rem; display: inline-block;
+  border-bottom: 4px solid var(--accent); padding-bottom: .3rem;
+}
+
+/* ---------- Cards (grid) ---------- */
+.card-grid {
+  display: grid; gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card {
+  background: #fff; padding: 1.5rem; margin-bottom: 1rem;
+  border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  transition: transform .3s;
+}
+.card:hover { transform: translateY(-5px); }
+.meta { color: #777; font-size: .9rem; }
+
+/* ---------- Skills ---------- */
+.skill-list { display: flex; flex-wrap: wrap; gap: .8rem; list-style: none; }
+.skill-list li {
+  background: var(--navy); color: #fff;
+  padding: .4rem 1.2rem; border-radius: 20px; font-size: .95rem;
+}
+
+/* ---------- Footer ---------- */
+footer { text-align: center; padding: 1.5rem; background: var(--navy); color: #fff; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .navbar { flex-direction: column; gap: .5rem; }
+  .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  #hero h1 { font-size: 2rem; }
+}
